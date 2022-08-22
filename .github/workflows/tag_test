@@ -2,7 +2,7 @@ name: Release Tag
 on:
   push:
     tags:
-      - releases-**
+      - dev-rc**
 jobs:
   build:
     runs-on: ubuntu-latest
