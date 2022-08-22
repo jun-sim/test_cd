@@ -8,6 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: test
-      run: echo ${{github.event.inputs.tags}}
+    - name: getTagName
+      run: |
+        echo ::set-output name=tag::${GITHUB_REF#refs/*/}
       id: tag_name 
+    - name: printTagName
+      run: 
+        echo ${{steps.tag_name.outputs.tag}}
