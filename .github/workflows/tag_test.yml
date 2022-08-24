@@ -1,7 +1,6 @@
 name: tag_test
 on:   
    push:
-     branches: [dev, main]
      tags:
         - 'dev-rc*'
    pull_request:
