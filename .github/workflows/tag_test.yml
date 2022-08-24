@@ -1,14 +1,8 @@
 name: tag_test
 on:   
    push:
-     tags:
-        - 'dev-rc*'
-   pull_request:
-     branches: [dev, main]
-   
-   #push:
-   # tags:
-   #   - 'dev-rc*'
+    tags:
+      - 'dev-rc*'
 
 jobs:
   build:
