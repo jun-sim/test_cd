@@ -1,9 +1,8 @@
 name: tag_test
-on:   
-   push:
+on:
+  push:
     tags:
       - 'dev-rc*'
-
 jobs:
   build:
     runs-on: ubuntu-latest
