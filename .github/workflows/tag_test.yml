@@ -1,0 +1,25 @@
+name: tag_test
+on:   
+   push:
+     branches: [dev, main]
+     tags:
+        - 'dev-rc*'
+   pull_request:
+     branches: [dev, main]
+   
+   #push:
+   # tags:
+   #   - 'dev-rc*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: getTagName
+      run: |
+        echo ::set-output name=tag::${GITHUB_REF#refs/*/}
+      id: tag_name 
+    - name: printTagName
+      run: 
+        echo ${{steps.tag_name.outputs.tag}}
